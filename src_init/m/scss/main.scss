@@ -1,0 +1,41 @@
+//-------------------------------------------------------------------------------------------------
+//  PATH : ../../../mui/scss/
+//
+//  ###_main.scss 파일을 실제 사용할 파일 명으로 변경 후 html 에서 href 시킴.
+//
+//  * SMACSS 사용
+//  * modifier : 동일 구조에서 특정한 속성으로 빠질 수 있는 것 <ex nav__item--last-child>
+//  * 공통.
+//
+//  - 단축 용어에 대한 것은 주석으로 구분 할 수 있게 한다.
+//  ex ) fld = Form FielD , exm = EXample Module 등등
+//  - 선택자는 되도록이면 복잡하지 않고 심플하게 구성한다. (상속 문제 등등)
+//  - 일반화 된 클래스명을 사용하지 않는다. (중복 가능성 있는)
+//  - 블럭__엘리먼트 or 블럭__엘리먼트_--부가적인기능?
+//
+//-------------------------------------------------------------------------------------------------
+
+// ##Base
+@import '../../../mui/scss/base/variables';
+@import '../../../mui/scss/base/mixins';
+@import '../../../mui/scss/base/extends';
+@import '../../../mui/scss/base/reset';
+
+// ##Customize Variables
+$design-width : 720px;
+
+$root-em : 24px;
+
+// ##Components
+@import '../../../mui/scss/components/buttons';
+@import '../../../mui/scss/components/embed';
+@import '../../../mui/scss/components/form';
+@import '../../../mui/scss/components/typography';
+
+// ##Layout
+@import '../../../mui/scss/layout/grid';
+@import '../../../mui/scss/layout/common';
+
+// ##Modules
+@import '../../../mui/scss/modules/modal';
+@import '../../../mui/scss/modules/animations';

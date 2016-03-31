@@ -1,0 +1,14 @@
+{
+  "name": "Makeulike Front-end Bower Package Manager",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "1.12.2",
+    "jquery-migrate": "~1.2.1",
+    "gsap": "latest",
+    "html5shiv": "~3.7.3",
+    "json2": "*",
+    "css3-mediaqueries-js": "~1.0.0"
+  },
+  "devDependencies": {}
+}
