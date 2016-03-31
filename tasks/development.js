@@ -85,6 +85,10 @@ gulp.task('develop', function(product, proxyHost, proxyContext) {
    * BrowserSync 사용 (with Proxy Middleware)
    */
   browserSync.init({
+    port: 4000,
+    ui: {
+      port: 4001
+    },
     server: {
       baseDir: ["./", config.path.src[0]],
       middleware: [proxy(proxyOptions)]
