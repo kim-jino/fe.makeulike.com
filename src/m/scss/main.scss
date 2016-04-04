@@ -22,7 +22,7 @@
 @import '../../../mui/scss/base/reset';
 
 // ##Customize Variables
-$design-width : 720px;
+$design-width : 640px;
 
 $root-em : 24px;
 
@@ -39,3 +39,14 @@ $root-em : 24px;
 // ##Modules
 @import '../../../mui/scss/modules/modal';
 @import '../../../mui/scss/modules/animations';
+
+@import 'theme/default';
+
+@import 'base/base';
+
+@import 'layout/common',
+              'layout/header',
+              'layout/nav',
+              'layout/footer';
+
+@import 'state/states';

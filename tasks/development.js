@@ -2,6 +2,7 @@
 var gulp = require('gulp-param')(require('gulp'), process.argv),
   watch = require('gulp-watch'),
   batch = require('gulp-batch'),
+  concat = require('gulp-concat'),
   sass = require('gulp-sass'),
   jshint = require('gulp-jshint');
 
@@ -34,7 +35,6 @@ gulp.task('sass:develop:mobile', function() {
   var opt = {
     outputStyle: 'compact'
   };
-
   return gulp.src(config.getFullPath(config.path.src, 'scss')[1])
     .pipe(gulp.dest(config.path.tmp[1] + config.path.scss))
     .pipe(sass(opt).on('error', sass.logError))
@@ -103,6 +103,7 @@ gulp.task('develop', function(product, proxyHost, proxyContext) {
   watch(config.getFullPath(config.path.src, 'scss')[0], batch(function(events, done) {
     gulp.start('sass:develop:pc', done);
   }));
+
   watch(config.getFullPath(config.path.src, 'scss')[1], batch(function(events, done) {
     gulp.start('sass:develop:mobile', done);
   }));
@@ -126,4 +127,28 @@ gulp.task('develop', function(product, proxyHost, proxyContext) {
   gulp.watch(config.getFullPath(config.path.src, 'images'))
     .on('change', browserSync.reload);
 
+});
+
+var imageDataURI = require('gulp-image-data-uri');
+
+gulp.task('imageToDataURI', function(product) {
+  if (product !== null) {
+    config.path.base = 'archive/' + product;
+    config.setBasePath(config.path.base);
+  }
+
+  return gulp.src(config.path.src[1] + '/images/uri/**/*')
+    .pipe(imageDataURI({
+      template: {
+        file: './templates/data-uri.css'
+      },
+      customClass: function(className, file) {
+        var string = className + '.';
+        var filePath = file.path.toString().split('\\');
+
+        return filePath[filePath.length - 2] + '.' + className;
+      }
+    }))
+    .pipe(concat('_data-uri.scss'))
+    .pipe(gulp.dest(config.path.src[1] + '/scss/modules'));
 });

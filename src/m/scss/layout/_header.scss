@@ -1,0 +1,13 @@
+.l-header{
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+
+  z-index:100;
+
+  width:100%;
+  height:rem(104px);
+
+  background-color:$color-header-bg;
+}
