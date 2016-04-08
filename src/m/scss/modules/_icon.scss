@@ -122,6 +122,17 @@
     width:rem(94px);
     height:rem(84px)
   }
+
+  &.ico-google-play{
+    position:absolute;
+    top:50%;
+    left:8%;
+
+    width:rem(29px);
+    height:rem(33px);
+
+    margin-top:rem(-14px);
+  }
 }
 
 .ico-scroll-down{

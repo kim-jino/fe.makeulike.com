@@ -23,9 +23,18 @@
         text-align: center;
         color: #666;
       }
-      &.active > a {
+      &.is-active > a {
         color: #FFF;
       }
     }
+  }
+}
+
+.tab-content{
+  &.is-invisible{
+    position:absolute;
+    overflow:hidden;
+    visibility: hidden;
+    height:0;
   }
 }

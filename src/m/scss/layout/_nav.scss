@@ -4,13 +4,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   background-color: rgba(0, 0, 0, .7);
   display: none;
 
   .gnb{
     position:relative;
-    z-index:101;
+    z-index:201;
 
     font-size:rem(36px);
     padding-top:rem(178px);
