@@ -25,28 +25,107 @@
   <main id="viewport">
     <header class="l-header">
       <h1 class="bi">
-        <span class="a11y">Makeulike</span>
+        <a href="./">
+          <i class="uri-common bi" role="button">
+            <span class="a11y">Makeulike</span>
+          </i>
+        </a>
       </h1>
       <i class="ico nav-bar"></i>
-      <nav class="gnb" id="gnb">
-        <a href="">
+    </header>
+    <nav class="l-nav nav-bar">
+      <div class="gnb">
+        <a class="gnb-anchor" href="about.html">
           about
         </a>
-        <a href="">
+        <a class="gnb-anchor" href="work.html">
           work
         </a>
-        <a href="">
+        <a class="gnb-anchor" href="ad-platform.html">
           ad platform
         </a>
-        <a href="">
+        <a class="gnb-anchor" href="recruit.html">
           recruit
         </a>
-        <a href="">
+        <a class="gnb-anchor" href="contact.html">
           contact
         </a>
-      </nav>
-    </header>
-    <section class="section" style="min-height:900px">
+      </div>
+    </nav>
+    <section class="section l-main">
+      <h2 class="a11y">메인 컨텐츠</h2>
+      <article class="cont">
+        <section class="slider">
+            <ul>
+              <li>
+                <img src="./images/notice/1.png" alt="">
+              </li>
+              <li>
+                <img src="./images/notice/2.png" alt="">
+              </li>
+              <li>
+                <img src="./images/notice/3.png" alt="">
+              </li>
+            </ul>
+        </section>
+        <a class="btn-scroll-down" href="#main-portfolio" data-toggle="scrollspy" data-avoid-target=".l-header">
+          <i class="uri-common ico-scroll-down"></i>
+        </a>
+      </article>
+      <ul class="list portfolio" id="main-portfolio">
+        <li >
+          <img src="./images/work/m_b_1.jpg" alt="">
+          <p class="portfolio-content">
+            <span class="portfolio-content-name">
+              뮤오리진
+            </span>
+            <span class="portfolio-content-category">
+              WEBSITE, BANNAR, OFFLINE
+            </span>
+            <i class="uri-common ico-more-portfolio"></i>
+          </p>
+          <div class="portfolio-mask"></div>
+        </li>
+        <li>
+          <img src="./images/work/m_b_2.jpg" alt="">          
+          <p class="portfolio-content">
+            <span class="portfolio-content-name">
+              뮤오리진
+            </span>
+            <span class="portfolio-content-category">
+              WEBSITE, BANNAR, OFFLINE
+            </span>
+            <i class="uri-common ico-more-portfolio"></i>
+          </p>
+          <div class="portfolio-mask"></div>
+        </li>
+        <li>
+          <img src="./images/work/m_b_3.jpg" alt="">
+          <p class="portfolio-content">
+            <span class="portfolio-content-name">
+              뮤오리진
+            </span>
+            <span class="portfolio-content-category">
+              WEBSITE, BANNAR, OFFLINE
+            </span>
+            <i class="uri-common ico-more-portfolio"></i>
+          </p>
+          <div class="portfolio-mask"></div>
+        </li>
+        <li>
+          <img src="./images/work/m_b_4.jpg" alt="">
+          <p class="portfolio-content">
+            <span class="portfolio-content-name">
+              뮤오리진
+            </span>
+            <span class="portfolio-content-category">
+              WEBSITE, BANNAR, OFFLINE
+            </span>
+            <i class="uri-common ico-more-portfolio"></i>
+          </p>
+          <div class="portfolio-mask"></div>
+        </li>
+      </ul>
     </section>
     <footer class="l-footer">
       <div class="company">
@@ -63,28 +142,25 @@
         <span class="company-mail">
           E. <a href="mailto:ad@makeulike.com">ad@makeulike.com</a>
         </span>
+        <p class="company-copyright">
+          COPYRIGHT © 2016 MAKEULIKE
+        </p>
       </div>
-      <p class="copyright">
-        COPYRIGHT © 2016 MAKEULIKE
-      </p>
-      <nav class="lnb lnb--footer">
-        <a class="lnb-facebook" href="">
-          <i class="ico circle-facebook"></i>
+      <nav class="lnb lnb-footer">
+        <a class="lnb-facebook" href="https://www.facebook.com/makeulike.kr" target="_blank">
+          <i class="uri-common btn-facebook"></i>
         </a>
-        <a class="lnb-request" href="">
-          <i class="ico circle-facebook"></i>
+        <a class="lnb-request" href="contact.html">
+          <i class="uri-common btn-request"></i>
         </a>
       </nav>
     </footer>
-
-    <aside class="ui__scroll-top" style="display: none;">
-      <div>
-        <a href="javascript:void(0)" id="btn-scroll-top">
-          <img src="./images/btn-top.png" alt="TOP">
-        </a>
-      </div>
-    </aside>
   </main>
+  <aside class="is-landscape">
+    <p class="a11y">
+      메큐라이크 사이트는 최상의 경험을 위해 세로 화면에 최적화되어 있습니다.
+    </p>
+  </aside>
   <div id="" class="modal" data-role="modal">
     <div class="modal-content">
       <!--내용-->
@@ -95,9 +171,12 @@
   </div>
   <!-- build:js /m/assets/js/vendor.js -->
   <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../bower_components/bxslider/jquery.bxSlider.min.js"></script>
   <!-- endbuild -->
   <!-- build:js /m/assets/js/plugin.js-->
   <script src="../../mui/js/common.js"></script>
+  <script src="../../mui/js/util.js"></script>
+  <script src="../../mui/js/events/scroll.js"></script>
   <!-- endbuild -->
   <script src="js/main.js"></script>
 </body>

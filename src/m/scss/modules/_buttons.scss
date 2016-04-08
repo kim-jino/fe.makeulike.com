@@ -1,0 +1,66 @@
+
+.btn-facebook {
+  width: rem(41px);
+  height: rem(41px);
+  margin-right: rem(18px);
+}
+
+.btn-request {
+  width: rem(183px);
+  height: rem(41px);
+}
+
+.btn-scroll-down{
+  display: block;
+
+  position:absolute;
+  bottom:rem(14px);
+  left:50%;
+  margin-left:rem(-41px);
+}
+
+.btn-get-started{
+  display:inline-block;
+
+  width:rem(196px);
+  padding-top:rem(12px);
+  padding-bottom:rem(8px);
+  
+  border:2px solid #FFF;
+  border-radius:40px;
+
+  margin-right:auto;
+  margin-left:auto;
+
+  font-size:rem(22px);
+  text-align: center;
+
+  color:#FFF;
+  background-color:transparent;
+
+  &.btn-darked{
+    border-color:#4a4d51;
+    color:#4a4d51;
+  }
+  &.btn-autoscale{
+    width:auto;
+    padding-right:rem(37px);
+    padding-left:rem(37px);
+    
+    white-space: nowrap;
+  }
+
+  .features-first &{
+    margin-top:rem(42px);
+  }
+
+  #viscuit .features-even &{
+    width:rem(200px);
+    padding-left:0;
+    padding-right:0;
+
+    white-space: nowrap;
+    font-size:rem(17px);
+    letter-spacing: rem(-2px);
+  }
+}

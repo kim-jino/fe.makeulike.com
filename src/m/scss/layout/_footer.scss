@@ -3,4 +3,6 @@
 
   background-color:$color-footer-bg;
   color:$color-footer-text;
+
+  @extend %clearfix;
 }

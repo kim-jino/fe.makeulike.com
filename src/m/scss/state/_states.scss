@@ -1,5 +1,48 @@
-.l-header{
-  &.is-sticky{
-    background-color:$color-header-bg-is-sticky;
+.is-sticky{
+  &.l-header{
+    background-color:$color-header-bg-is-sticky;  
+  }  
+}
+
+.is-fixed{
+  position:fixed;
+  width:100%;
+  height:0;
+}
+
+.is-visible {
+  .gnb-anchor{
+    @include transform(translateX(0));
+    @include opacity(1);
+    &:nth-child(2){
+      transition-delay:100ms;
+    }
+    &:nth-child(3){
+      transition-delay:200ms;
+    }
+    &:nth-child(4){
+      transition-delay:300ms;
+    }
+    &:nth-child(5){
+      transition-delay:400ms;
+    }
   }
+}
+
+.is-landscape{
+  display:none;
+
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+
+  z-index:900;
+
+  background-color:#6b7382;
+  background-image:url('../images/is-landscape.png');
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:50% auto;
 }

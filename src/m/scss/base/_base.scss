@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'GravuConLig';
+  src: url('/fonts/GravuConLig.eot');
+  src: local('GravuConLig'),  url('/fonts/GravuConLig.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GravuConReg';
+  src: url('/fonts/GravuConReg.eot');
+  src: local('GravuConReg'), url('/fonts/GravuConReg.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GravuConBold';
+  src: url('/fonts/GravuConBol.eot');
+  src: local('GravuConBold'), url('/fonts/GravuConBol.ttf') format('truetype');
+}
+
 html{
   @include setViewport($viewport-array);
+}
+
+body{
+  font-family: 'GravuConReg','NanumGothic', sans-serif;
+  background-color:$color-footer-bg;
 }

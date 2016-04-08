@@ -1,0 +1,59 @@
+.portfolio {
+  & > li {
+    position: relative;
+    overflow: hidden;
+
+    & > img {
+      @include transform(scale3d(1, 1, 1));
+      @include transition(all 0.5s ease-in-out);
+      -webkit-transform-origin: center;
+      -moz-transform-origin: center;
+      -ms-transform-origin: center;
+      transform-origin: center;
+    }
+
+    &.is-hover {
+      & > img {
+        @include transform(scale3d(1.2, 1.2, 1.2));
+      }
+    }
+  }
+
+  &-mask,
+  &-content {
+    opacity: 0;
+    @include transition(all 0.5s ease-in-out);
+    .is-hover & {
+      opacity: 1;
+    }
+  }
+
+  &-mask {
+    @include abs-pos(0, 0, 0, 0);
+    @extend %no-margin;
+    border: 2px solid red;
+    .is-hover & {
+      background-color: rgba(0, 0, 0, .65);
+    }
+  }
+  
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    margin: 0;
+    text-align: center;
+    color: white;
+    @include transform(translate(-50%, -50%));
+    & > span {
+      display: block;
+    }
+    &-name {
+      font-size: rem(27px);
+    }
+    &-category {
+      font-size: rem(17px);
+    }
+  }
+}

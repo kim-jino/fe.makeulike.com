@@ -25,35 +25,40 @@
   <main id="viewport">
     <header class="l-header">
       <h1 class="bi">
-        <span class="a11y">Makeulike</span>
+        <a href="./">
+          <i class="uri-common bi" role="button">
+            <span class="a11y">Makeulike</span>
+          </i>
+        </a>
       </h1>
       <i class="ico nav-bar"></i>
-      <nav class="gnb" id="gnb">
-        <a href="">
-          about
-        </a>
-        <a href="">
-          work
-        </a>
-        <a href="">
-          ad platform
-        </a>
-        <a href="">
-          recruit
-        </a>
-        <a href="">
-          contact
-        </a>
-      </nav>
     </header>
-    <section class="section">
-      <!-- 각 페이지 별 내용 삽입 -->
+    <nav class="l-nav nav-bar">
+      <div class="gnb">
+        <a class="gnb-anchor" href="about.html">
+            about
+          </a>
+        <a class="gnb-anchor" href="work.html">
+            work
+          </a>
+        <a class="gnb-anchor" href="ad-platform.html">
+            ad platform
+          </a>
+        <a class="gnb-anchor" href="recruit.html">
+            recruit
+          </a>
+        <a class="gnb-anchor" href="contact.html">
+            contact
+          </a>
+      </div>
+    </nav>
+    <section class="section" style="min-height:600px">
     </section>
     <footer class="l-footer">
       <div class="company">
         <p class="company-address">
-          16F, Golden Tower, 511, Samseong-ro, <br>
-          GANGNAM-GU, SEOUL, KOREA
+          16F, Golden Tower, 511, Samseong-ro,
+          <br> GANGNAM-GU, SEOUL, KOREA
         </p>
         <span class="company-tel">
           T. 82. 2. 2015. 2600 
@@ -64,28 +69,25 @@
         <span class="company-mail">
           E. <a href="mailto:ad@makeulike.com">ad@makeulike.com</a>
         </span>
+        <p class="company-copyright">
+          COPYRIGHT © 2016 MAKEULIKE
+        </p>
       </div>
-      <p class="copyright">
-        COPYRIGHT © 2016 MAKEULIKE
-      </p>
-      <nav class="lnb lnb--footer">
-        <a class="lnb-facebook" href="">
-          <i class="ico circle-facebook"></i>
+      <nav class="lnb lnb-footer">
+        <a class="lnb-facebook" href="https://www.facebook.com/makeulike.kr" target="_blank">
+          <i class="uri-common btn-facebook"></i>
         </a>
-        <a class="lnb-request" href="">
-          <i class="ico circle-facebook"></i>
+        <a class="lnb-request" href="contact.html">
+          <i class="uri-common btn-request"></i>
         </a>
       </nav>
     </footer>
-
-    <aside class="ui__scroll-top" style="display: none;">
-      <div>
-        <a href="javascript:void(0)" id="btn-scroll-top">
-          <img src="./images/btn-top.png" alt="TOP">
-        </a>
-      </div>
-    </aside>
   </main>
+  <aside class="is-landscape">
+    <p class="a11y">
+      메큐라이크 사이트는 최상의 경험을 위해 세로 화면에 최적화되어 있습니다.
+    </p>
+  </aside>
   <div id="" class="modal" data-role="modal">
     <div class="modal-content">
       <!--내용-->

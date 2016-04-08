@@ -40,13 +40,26 @@ $root-em : 24px;
 @import '../../../mui/scss/modules/modal';
 @import '../../../mui/scss/modules/animations';
 
-@import 'theme/default';
+@import 'theme/default',
+               'theme/typography';
 
 @import 'base/base';
 
 @import 'layout/common',
               'layout/header',
               'layout/nav',
+              'layout/section',
               'layout/footer';
+
+@import 'modules/data-uri',
+              'modules/icon',
+              'modules/buttons',
+              'modules/content',
+              'modules/features',
+              'modules/company',
+              'modules/list',
+              'modules/tabs',
+              'modules/portfolio',
+              'modules/slider';
 
 @import 'state/states';

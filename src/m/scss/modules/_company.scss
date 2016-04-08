@@ -1,0 +1,21 @@
+.company{
+  float:left;
+  
+  padding-top: rem(65px);
+  padding-bottom: rem(103px);
+  padding-left: rem(35px);
+
+  font-size: rem(16px);
+  line-height: rem(26px);
+
+  .l-footer &{
+    width:rem(360px);
+  }
+
+  p{
+    margin:0;
+  }
+  &-mail{
+    display:block;
+  }
+}

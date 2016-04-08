@@ -4,10 +4,30 @@
   right:0;
   left:0;
 
-  z-index:100;
+  z-index:101;
 
   width:100%;
   height:rem(104px);
 
   background-color:$color-header-bg;
+
+  @extend %clearfix;
+  @include transition(all 0.3s ease-in-out);
+
+  .bi{
+    float:left;
+  }
+
+  .uri-common.bi{
+    display:block;
+
+    width:rem(223px);
+    height:rem(56px);
+
+    margin-top:rem(25px);
+    margin-left:rem(37px);
+
+    background-size:100%;
+    background-repeat:no-repeat;
+  }
 }
