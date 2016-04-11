@@ -24,7 +24,7 @@
 // ##Customize Variables
 $design-width : 640px;
 
-$root-em : 24px;
+$root-em : 32px;
 
 // ##Components
 @import '../../../mui/scss/components/buttons';
@@ -59,6 +59,7 @@ $root-em : 24px;
               'modules/company',
               'modules/list',
               'modules/tabs',
+              'modules/accordion',
               'modules/portfolio',
               'modules/slider';
 

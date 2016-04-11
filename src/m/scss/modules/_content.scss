@@ -18,6 +18,29 @@
     padding-left:rem(20px);
     padding-top:rem(77px);
     padding-bottom:rem(100px);
+
+    white-space: nowrap;
   }
   
+  .l-recruit &{
+    padding-left:rem(40px);
+    padding-right:rem(40px);
+
+    & > h3{
+      padding-top:rem(70px);
+      padding-bottom:rem(51px);
+      text-transform: uppercase;
+    }
+    &-hiring-info{
+      @extend .accordion-cont;
+      & > h3{
+        color: #3479f8;
+      }
+      & > h4{
+        padding-top:rem(50px);
+        
+        font-size:rem(20px);
+      }
+    }
+  }
 }

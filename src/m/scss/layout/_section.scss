@@ -2,13 +2,14 @@
   position:relative;
 
   &.l-about,
-  &.l-ad-platform{
+  &.l-ad-platform,
+  &.l-recruit{
     margin-top:rem(104px);
   }
 
   &.l-about{
     padding-top:rem(90px);
-    background-color:white;
+    background-color:#FFF;
     & > h2{
       font-size:rem(45px);
       font-weight:normal;
@@ -29,6 +30,19 @@
 
   &.l-ad-platform{
     padding-top:rem(66px);
+  }
+
+  &.l-recruit{
+    background-color:#FFF;
+
+    & > h2{
+      padding-top:rem(70px);
+      padding-bottom:rem(63px);
+
+      border:1px solid #e8e8e8;
+
+      font-size:rem(30px);
+    }
   }
   
 }

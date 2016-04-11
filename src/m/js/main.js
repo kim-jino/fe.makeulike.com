@@ -167,7 +167,7 @@ var UI = (function() {
     UI.toggleNavBar();
     $(this).toggleClass('is-toggle');
   });
-
+  
   $(window).scroll(function() {
     UI.scrollInterface();
   });

@@ -54,6 +54,51 @@
       }
     }
   }
+
+  &.accordion-plus{
+    position:absolute;
+    top:50%;
+    right:rem(40px);
+    display:block;
+
+    width:rem(26px);
+    height:rem(26px);
+
+    margin-top:rem(-11px);
+    &:before,
+    &:after{
+      content:'';
+      position:absolute;
+      display: block;
+
+      background-color:#000;
+    }
+
+    &:before{
+      top:0;
+      bottom:0;
+      left:50%;
+
+      width:2px;
+      margin-left:-1px;
+
+      @include transition(all 100ms ease-in-out);
+
+      .is-active &{
+        opacity:0;
+        transform:rotateZ(90deg);
+      }
+    }
+    &:after{
+      top:50%;
+      right:0;
+      left:0;
+
+      height:2px;
+      margin-top:-1px;
+
+    }
+  }
 }
 
 .uri-common{
