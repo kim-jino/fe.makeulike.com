@@ -1,0 +1,88 @@
+.form{
+  position:relative;
+
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  button{
+    -webkit-appearance: none;
+    border-radius:0;
+    border:none;
+    background-color:transparent;
+  }
+
+  .l-contact &{
+    padding-bottom:rem(78px);
+
+    color:#F6F6F6;
+
+    input[type="text"],
+    input[type="email"],
+    textarea{
+      display:block;
+      width:100%;
+
+      border:1px solid #898b8e;
+      padding-top:rem(15px);
+      padding-left:rem(10px);
+      padding-bottom:rem(17px);
+      padding-right:rem(10px);
+
+      margin-top:rem(18px);
+
+      font-size:rem(22px);
+
+      color:#CCC;
+      background-color:transparent;
+    }
+
+    & > h3{
+      margin-top:rem(30px);
+
+      font-size:rem(26px);
+    }
+
+    input{
+      &:first-child{
+        margin-top:0;
+      }
+    }
+
+    textarea{
+      height:rem(165px);
+    }
+
+    [type="submit"]{
+      display:block;
+      width:100%;
+
+      padding-top:rem(15px);
+      padding-bottom:rem(15px);
+
+      font-size:rem(20px);
+      text-align: center;
+      text-transform:uppercase;
+
+      background-color:#909295;
+    }
+
+    &-agreement{
+      height:rem(145px);
+    }
+    &-agree{
+      display:block;
+      margin-top:rem(18px);
+      margin-bottom:rem(18px);
+
+      font-size:rem(22px);
+      line-height:rem(24px);
+      
+      input[type="checkbox"]{
+        vertical-align: middle;
+        width:rem(22px);
+        height:rem(22px);
+      }
+    }
+
+  }
+}

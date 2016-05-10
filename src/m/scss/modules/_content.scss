@@ -43,4 +43,34 @@
       }
     }
   }
+  .l-contact &{
+    padding-left:rem(25px);
+    padding-right:rem(25px);
+    &-address{
+      padding-top:rem(43px);
+      padding-bottom:rem(113px);
+
+      font-size:rem(19px);
+      letter-spacing: rem(-1px);
+      text-align: center;
+      line-height:rem(28px);
+
+      background-color:#FFF;
+
+      & > h3{
+        padding-top:rem(34px);
+        padding-bottom:rem(34px);
+
+        font-weight: normal;
+        font-size:rem(30px);
+        letter-spacing: rem(7px);
+        text-transform:uppercase;
+      }
+
+      em,
+      address {
+        font-style: normal;
+      }
+    }
+  }
 }

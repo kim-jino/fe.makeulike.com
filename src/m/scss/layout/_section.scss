@@ -3,7 +3,8 @@
 
   &.l-about,
   &.l-ad-platform,
-  &.l-recruit{
+  &.l-recruit,
+  &.l-contact{
     margin-top:rem(104px);
   }
 
@@ -45,4 +46,15 @@
     }
   }
   
+  &.l-contact{
+    background-color:#4a4d51;
+    & > h2{      
+      padding-top:rem(70px);
+      padding-bottom:rem(63px);
+
+      font-size:rem(30px);
+
+      color:#F6F6F6;
+    }
+  }
 }

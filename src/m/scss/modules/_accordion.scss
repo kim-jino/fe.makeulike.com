@@ -1,79 +1,68 @@
-.accordion{
+.accordion {
   @extend %list-style-none;
   font-family: sans-serif;
-  .l-recruit &{
-    margin-top:rem(85px);
+  .l-recruit & {
+    margin-top: rem(85px);
     letter-spacing: rem(-1px);
     &-heading,
-    &-cont{
+    &-cont {
       @extend .cont;
     }
-    &-heading{
-      position:relative;
-
-      padding-top:rem(50px);
-      padding-bottom:rem(50px);
-
+    &-heading {
+      position: relative;
+      padding-top: rem(50px);
+      padding-bottom: rem(50px);
       border-bottom: 1px solid #E0E0E0;
-
-      font-size:rem(28px);
-      text-transform:uppercase;
+      font-size: rem(28px);
+      text-transform: uppercase;
       letter-spacing: rem(7px);
-
-      color:#414042;
-      &:first-child{
+      color: #414042;
+      &:first-child {
         border-top: 1px solid #E0E0E0;
       }
-
     }
-    &-cont{
-      padding-bottom:rem(60px);
+    &-cont {
+      padding-bottom: rem(60px);
       border-bottom: 1px solid #E0E0E0;
       @extend %no-margin;
-
-      & > h3{
-        padding-top:rem(50px);
-        padding-bottom:rem(13px);
-
-        font-size:rem(22px + 3px);
+      & > h3 {
+        padding-top: rem(50px);
+        padding-bottom: rem(13px);
+        font-size: rem(22px + 2px);
       }
-      & > h4{
-        font-size:rem(17px + 3px);
+      & > h4 {
+        font-size: rem(17px + 2px);
       }
-      & > p{
-        margin:0;
+      & > p {
+        margin: 0;
         line-height: 1.8;
       }
       & > p,
       & > em,
       & > ul {
-        font-size:rem(16px + 3px);
-        li{
-          margin-top:rem(8px);
+        font-size: rem(16px + 2px);
+        li {
+          margin-top: rem(8px);
         }
       }
-      & > em{
-        display:block;
-        margin-top:rem(20px);
-
-        font-style:normal;
+      & > em {
+        display: block;
+        margin-top: rem(20px);
+        font-style: normal;
         font-weight: bold;
       }
-      ul{
+      ul {
         @extend %list-style-none;
       }
-
-      .is-active &{
-        display:block;
+      .is-active & {
+        display: block;
       }
-
     }
-    .is-active{
-      display:block;
-
-      background-color:#f3f3f3;
-      &.accordion-heading{
-        border-bottom:none;
+    .is-active {
+      display: block;
+      background-color: #f3f3f3;
+      &.accordion-heading {
+        border-bottom: none;
       }
     }
   }

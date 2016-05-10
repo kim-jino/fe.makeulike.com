@@ -179,6 +179,15 @@
     margin-top:rem(-14px);
   }
 }
+.uri-contact{
+  @extend .uri-common;
+  margin-right:auto;
+  margin-left:auto;
+  &.ico-pin{
+    width:rem(66px);
+    height:rem(74px);
+  }
+}
 
 .ico-scroll-down{
   width:rem(83px);
