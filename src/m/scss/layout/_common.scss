@@ -6,4 +6,15 @@
 
   margin-right:auto;
   margin-left:auto;
+
+  overflow:hidden;
+
+  z-index:1;
+
+  @include breakpoint(min-width, $design-width){
+    html & {
+      width:100%;
+      max-width: none;
+    }
+  }
 }

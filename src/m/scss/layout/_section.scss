@@ -2,6 +2,7 @@
   position:relative;
 
   &.l-about,
+  &.l-work,
   &.l-ad-platform,
   &.l-recruit,
   &.l-contact{
@@ -29,8 +30,13 @@
     }
   }
 
-  &.l-ad-platform{
+  &.l-ad-platform,
+  &.l-work{
     padding-top:rem(66px);
+  }
+
+  &.l-work.is-view{
+    padding-top:0;
   }
 
   &.l-recruit{
@@ -56,5 +62,14 @@
 
       color:#F6F6F6;
     }
+  }
+}
+
+// l-work
+.l-work {
+  &-website,
+  &-banner {
+    padding-right: rem(23px);
+    padding-left: rem(23px);
   }
 }

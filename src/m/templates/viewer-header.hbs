@@ -1,0 +1,38 @@
+{{!
+  viewer-header.hbs
+ 
+ WORK 상세보기의 상단 영역
+}}
+
+<nav class="viewer-lnb">
+    <a class="viewer-btn-close"  href="#work-list">
+      <i class="uri-work btn-close"></i>
+    </a>
+    <a class="viewer-btn-next"  href="#{{next}}">
+      <i class="uri-work btn-next"></i>
+    </a>
+    <a class="viewer-btn-prev"  href="#{{prev}}">
+      <i class="uri-work btn-prev"></i>
+    </a>
+  </nav>
+  <header class="viewer-header">
+    <h1 class="viewer-title">
+      {{title}}
+      <small>
+        {{subtitle}}
+      </small>
+    </h1>
+    {{#if genre}}
+    <dl class="viewer-meta">
+      <dt>Genre</dt>
+      <dd>{{genre}}</dd>
+      <dt>Client</dt>
+      <dd>{{client}}</dd>
+      <dt>Data</dt>
+      <dd>{{pdate}}</dd>
+    </dl>
+    {{/if}}
+    <p class="viewer-content">
+      {{text}}
+    </p>
+  </header>

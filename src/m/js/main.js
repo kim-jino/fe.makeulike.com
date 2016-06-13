@@ -8,9 +8,11 @@ var UI = (function() {
     },
     page: {
       main: $('.l-main'),
+      work: $('.l-work'),
       adPlatform: $('.l-ad-platform')
     }
   };
+  
   var is = {
     stickyHeader: true // is Sticky at Header
   };
@@ -68,9 +70,6 @@ var UI = (function() {
   var setFocusPortfolio = function() {
     if ($el.portfolio.main.length > 0) {
       var i = 0;
-
-      $el.portfolio.main.find('li').eq(i).addClass('is-hover');
-      i++;
       setInterval(function() {
         $el.portfolio.main.find('li').removeClass('is-hover');
         $el.portfolio.main.find('li').eq(i).addClass('is-hover');
@@ -85,21 +84,26 @@ var UI = (function() {
    * 메인페이지 로딩 시 실행되어야 할 메소드
    * @return {[type]} [description]
    */
-  var mainProcedure = function() {
-    var settings = {
-      auto: true,
-      pause: 5000,
-      onSlideAfter: function() {
-        mainSlider.startAuto();
-      }
-    };
-    var mainSlider = $el.page.main.find('.slider').find('ul').bxSlider(settings);
-
+  var mainProcedure = function() {    
     setFocusPortfolio();
+
+    sliderFactory($('.l-main .owl-carousel'));
+    Work.init('main');
   };
 
-  var sliderFactory = function($target){
-    return $target.bxSlider();
+  var workInterface = function() {
+    Work.init('work');
+  };
+
+  var sliderFactory = function($target) {
+    var options = {
+      loop: true,
+      autoplay: true,
+      margin: 0,
+      items: 1
+    };
+
+    return $target.owlCarousel(options);
   }
 
   var init = function() {
@@ -109,16 +113,23 @@ var UI = (function() {
     /**
      * 메인페이지 영역이 존재하면 실행
      */
-    if ($el.page.main.length > 0) {     
-      $el.page.main.find('.cont').css('height', $(window).innerHeight()); 
+    if ($el.page.main.length > 0) {
+      $el.page.main.find('.cont').css('height', $(window).innerHeight());
       mainProcedure();
+    }
+
+    /**
+     * WORK 영역이 존재하면 실행
+     */
+    if ($el.page.work.length > 0) {
+      workInterface();
     }
 
     /**
      * Ad Platform 페이지
      * 리팩토링 필요
      */
-    if ($el.page.adPlatform.length > 0) {     
+    if ($el.page.adPlatform.length > 0) {
       var $sliderTarget = [
         $('#insight-slider'),
         $('#viscuit-slider'),
@@ -126,18 +137,19 @@ var UI = (function() {
       ]
 
       var $slider = [
-        sliderFactory( ($sliderTarget[0]) ),
-        sliderFactory( ($sliderTarget[1]) ),
-        sliderFactory( ($sliderTarget[2]) )
+        sliderFactory(($sliderTarget[0])),
+        sliderFactory(($sliderTarget[1])),
+        sliderFactory(($sliderTarget[2]))
       ];
     }
 
   };
 
-  var scrollInterface = function() {/**
+  var scrollInterface = function() {
+    /**
      * 메인페이지 영역이 존재하면 실행
      */
-    if ($el.page.main.length > 0) {     
+    if ($el.page.main.length > 0) {
       toggleHeader();
     }
   };
@@ -150,26 +162,67 @@ var UI = (function() {
     init: init,
     scrollInterface: scrollInterface,
     resizeInterface: resizeInterface,
-    toggleNavBar: toggleNavBar
+    toggleNavBar: toggleNavBar,
+    is: is
   };
 }() || {});
 
-;
-(function() {
+;(function() {
   UI.init();
-
   /**
    * jQuery Event Handlers
    */
 
   /** GNB Icon Toggle */
-  $('.ico.nav-bar').on('click', function() {
+  $('.ico.nav-bar').on('click', function(e) {
+    e.preventDefault();
+    
     UI.toggleNavBar();
+
     $(this).toggleClass('is-toggle');
   });
-  
+
+  // Ad-Platform Tab
+  $('.l-ad-platform .tab-nav a').on('click', function(){
+    mui.util.goToPosition(0);
+  })
+
   $(window).scroll(function() {
     UI.scrollInterface();
   });
 
+  // Event Listening
+  window.addEventListener('orientationchange', function(ev){
+    console.log(window.orientation)
+    if(window.orientation === 0){
+      $('.is-landscape').hide();
+    } else {
+      $('.is-landscape').show();
+    }
+  });
+
 }());
+
+
+Handlebars.registerHelper('ifCond', function(v1, operator, v2, options) {
+  switch (operator) {
+    case '==':
+      return (v1 == v2) ? options.fn(this) : options.inverse(this);
+    case '===':
+      return (v1 === v2) ? options.fn(this) : options.inverse(this);
+    case '<':
+      return (v1 < v2) ? options.fn(this) : options.inverse(this);
+    case '<=':
+      return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+    case '>':
+      return (v1 > v2) ? options.fn(this) : options.inverse(this);
+    case '>=':
+      return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+    case '&&':
+      return (v1 && v2) ? options.fn(this) : options.inverse(this);
+    case '||':
+      return (v1 || v2) ? options.fn(this) : options.inverse(this);
+    default:
+      return options.inverse(this);
+  }
+});

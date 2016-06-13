@@ -1,6 +1,9 @@
-.tabs {
+.tab-nav {
   position: relative;
-  .l-ad-platform & {
+  .l-ad-platform &,
+  .l-work & {    
+    display: block;
+
     position: fixed;
     top: rem(104px);
     right: 0;
@@ -23,12 +26,13 @@
         text-align: center;
         color: #666;
       }
-      &.is-active > a {
+      &.active > a {
         color: #FFF;
       }
     }
   }
 }
+
 
 .tab-content {
   &.is-invisible {

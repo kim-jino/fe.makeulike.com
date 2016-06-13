@@ -1,3 +1,27 @@
+.is-view{
+  &.l-work {
+    & > .tab-nav,
+    & > .list{
+      opacity:0;
+    }
+  }
+  .l-main{
+    opacity:0;
+  }
+}
+
+.is-close{
+  &.l-work {
+    & > .tab-nav,
+    & > .list{
+      opacity:1;
+    }
+  }
+  .l-main{
+    opacity:1;
+  }
+}
+
 .is-sticky {
   &.l-header {
     background-color: $color-header-bg-is-sticky;
@@ -36,7 +60,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 900;
+  z-index: 9999;
   background-color: #6b7382;
   background-image: url('../images/is-landscape.png');
   background-position: center;

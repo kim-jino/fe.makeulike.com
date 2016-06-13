@@ -1,0 +1,19 @@
+.uri{
+  &-work{
+    display:block;
+    background-size:100% 100%;
+  }
+}
+
+.btn-next,
+.btn-prev,
+.btn-close{
+  width:rem(60px);
+  height:rem(60px);
+}
+
+.btn-close{
+  #popup-viewer-detail &{
+    @extend .uri-work.btn-close-white;
+  }
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>메큐라이크 | MAKEULIKE</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <script>
+  <!--
+  var UserAgent = navigator.userAgent;
+  var UADevice = UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i);
+  var UAVendor = UserAgent.match(/LG|SAMSUNG|Samsung/);
+  if (UADevice != null || UAVendor != null) {
+    // do
+  } else {
+    //location.href = "../";
+  }
+  //-->
+  </script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main id="viewport">
+    <header class="l-header is-sticky">
+      <h1 class="bi">
+        <a href="./">
+          <i class="uri-common bi" role="button">
+            <span class="a11y">Makeulike</span>
+          </i>
+        </a>
+      </h1>
+      <i class="ico nav-bar"></i>
+    </header>
+    <nav class="l-nav nav-bar">
+      <div class="gnb">
+        <a class="gnb-anchor" href="about.html">
+            about
+          </a>
+        <a class="gnb-anchor" href="work.html">
+            work
+          </a>
+        <a class="gnb-anchor" href="ad-platform.html">
+            ad platform
+          </a>
+        <a class="gnb-anchor" href="recruit.html">
+            recruit
+          </a>
+        <a class="gnb-anchor" href="contact.html">
+            contact
+          </a>
+      </div>
+    </nav>
+    <section class="section l-work">
+      <ul class="tab-nav" role="navigation">
+        <li class="active"><a href="#all">All</a></li>
+        <li><a href="#brand">Brand</a></li>
+        <li><a href="#game">Game</a></li>
+      </ul>
+      <article class="list" id="work-list" role="list"></article>
+      <article class="viewer" id="work-viewer"></article>
+    </section>
+    <footer class="l-footer">
+      <div class="company">
+        <p class="company-address">
+          16F, Golden Tower, 511, Samseong-ro,
+          <br> GANGNAM-GU, SEOUL, KOREA
+        </p>
+        <span class="company-tel">
+          T. 82. 2. 2015. 2600 
+        </span>
+        <span class="company-fax">
+          F. 82. 2. 2015. 2674
+        </span>
+        <span class="company-mail">
+          E. <a href="mailto:ad@makeulike.com">ad@makeulike.com</a>
+        </span>
+        <p class="company-copyright">
+          COPYRIGHT © 2016 MAKEULIKE
+        </p>
+      </div>
+      <nav class="lnb lnb-footer">
+        <a class="lnb-facebook" href="https://www.facebook.com/makeulike.kr" target="_blank">
+          <i class="uri-common btn-facebook"></i>
+        </a>
+        <a class="lnb-request" href="contact.html">
+          <i class="uri-common btn-request"></i>
+        </a>
+      </nav>
+    </footer>
+  </main>
+  <aside class="is-landscape">
+    <p class="a11y">
+      메큐라이크 사이트는 최상의 경험을 위해 세로 화면에 최적화되어 있습니다.
+    </p>
+  </aside>
+
+  <div class="modal" id="popup-viewer-detail" data-role="modal" data-view="full">
+    <div class="modal-content">
+      <!--내용-->
+        <img src="" alt="" id="viewer-detail-img">
+      <!-- End -->
+      <a class="modal-btn-close" href="javascript:void(0)" data-rel="back">
+        <i class="uri-work btn-close"></i>        
+      </a>
+    </div>
+  </div>
+  
+  <!-- build:js ./assets/js/vendor.js -->
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../bower_components/handlebars/handlebars.min.js"></script>
+  <!-- endbuild -->
+  <!-- build:js ./assets/js/plugin.js-->
+  <script src="../../bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="../../mui/js/common.js"></script>
+  <script src="../../mui/js/util.js"></script>
+  <script src="../../mui/js/ajax.js"></script>
+  <script src="../../mui/js/modal.js"></script>
+  <script src="../../mui/js/validate.js"></script>
+  <script src="../../mui/js/events/scroll.js"></script>
+  <script src="../../mui/js/plugins/tabs.js"></script>
+  <!-- endbuild -->
+  <!-- build:js ./js/common.js-->
+  <script src="js/work.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+.modal{
+  &-content{
+    #popup-viewer-detail &{
+      background-color:black;
+    }
+  }
+  &-btn{
+    &-close{
+      position:absolute;
+
+      top:rem(50px);
+      right:rem(20px);
+
+      #popup-viewer-detail &{
+        position:fixed;
+      }
+
+      #popup-video &{
+        top:rem(-50px);
+        right:0;
+
+        width:rem(35px);
+        height:rem(35px);
+      }
+    }
+  }
+}

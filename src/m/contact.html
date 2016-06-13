@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Makeulike</title>
+  <title>메큐라이크 | MAKEULIKE</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
   <script>
@@ -58,9 +58,9 @@
         담당자를 연결해 드리겠습니다.
       </h2>
       <form class="form contact-form cont">
-        <input type="text" placeholder="Name_" title="이름을 입력해주세요">
-        <input type="email" placeholder="Email_" title="이메일을 입력해주세요.">
-        <textarea placeholder="Message_" title="내용을 입력해주세요."></textarea>
+        <input id="contact-name" type="text" placeholder="Name_" title="이름을 입력해주세요">
+        <input id="contact-email" type="email" placeholder="Email_" title="이메일을 입력해주세요.">
+        <textarea id="contact-contents" placeholder="Message_" title="내용을 입력해주세요."></textarea>
         <h3>개인정보 수집·이용에 대한 안내</h3>
         <textarea class="form-agreement" readonly>
 < 개인정보 수집·이용에 대한 안내 >
@@ -79,8 +79,8 @@
 - 개인정보의 보유·이용기간 : 1년간 보관 후 폐기
         </textarea>
         <span class="form-agree">
-          <input type="checkbox" id="contact-form-agreement">
           <label for="contact-form-agreement">
+            <input type="checkbox" id="contact-form-agreement">
             위 개인정보 수집·이용에 동의합니다.
           </label>
         </span>
@@ -170,13 +170,25 @@
       </a>
     </div>
   </div>
-  <!-- build:js /m/assets/js/vendor.js -->
+  <!-- build:js ./assets/js/vendor.js -->
   <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../../bower_components/handlebars/handlebars.min.js"></script>
   <!-- endbuild -->
-  <!-- build:js /m/assets/js/plugin.js-->
+  <!-- build:js ./assets/js/plugin.js-->
+  <script src="../../bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="../../mui/js/common.js"></script>
+  <script src="../../mui/js/util.js"></script>
+  <script src="../../mui/js/ajax.js"></script>
+  <script src="../../mui/js/modal.js"></script>
+  <script src="../../mui/js/validate.js"></script>
+  <script src="../../mui/js/events/scroll.js"></script>
+  <script src="../../mui/js/plugins/tabs.js"></script>
   <!-- endbuild -->
+  <!-- build:js ./js/common.js-->
+  <script src="js/work.js"></script>
+  <script src="js/contact.js"></script>
   <script src="js/main.js"></script>
+  <!-- endbuild -->
 </body>
 
 </html>

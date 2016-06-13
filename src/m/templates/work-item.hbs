@@ -1,0 +1,55 @@
+{{!
+  work-item.hbs
+ 
+ WORK 목록
+}}
+
+{{#each .}}
+    <div class="list-item" role="listiem" data-kind="{{kind}}" style="background-image:url('{{m_list_img}}')">
+      <a href="#{{idx}}" role="button">
+        <h3>{{title}}</h3>
+        <p>
+          {{#if website}}
+            <span>website</span>
+          {{/if}}
+
+          {{#if mobile}}
+            <span>mobile</span>
+          {{/if}}
+
+          {{#if app}}
+            <span>app</span>
+          {{/if}}
+
+          {{#if banner}}
+            <span>banner</span>
+          {{/if}}
+
+          {{#if offline}}
+            <span>offline</span>
+          {{/if}}
+
+          {{#if media}}
+            <span>media</span>
+          {{/if}}
+
+          {{#if icon}}
+            <span>icon</span>
+          {{/if}}
+
+          {{#if iconbi}}
+            <span>icon/bi</span>
+          {{/if}}
+
+          {{#if sticon}}
+            <span>sticon</span>
+          {{/if}}
+
+          {{#if timeboard}}
+            <span>timeboard</span>
+          {{/if}}
+        </p>
+      </a>
+      <div class="list-mask"></div>
+    </div>
+  {{/each}}

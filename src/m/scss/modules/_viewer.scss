@@ -1,0 +1,183 @@
+.viewer {
+  @include transition(all 0.3s cubic-bezier(0.4, 0, 0.2, 1));
+  @include transform(translate3d(100%, 0, 0));
+  @at-root .is-view & {
+    position: relative;
+    opacity: 1;
+    @include transform(none);
+  }
+  position:absolute; //   fixed로 할 경우 아이폰 사파리에서 내용 Cut-off 현상 발생
+  top:0;
+  left:0;
+  z-index:200;
+  width:100%;
+  padding-top:0;
+  background-color:white;
+  opacity:0;
+  .l-main ~ & {
+    @extend .section.l-work;
+    padding-top: 0;
+  }
+  &-inner {
+    position: relative;
+  }
+  &-lnb {
+    position: fixed;
+    top: rem(130px);
+    right: rem(32px);
+    display: none;
+    z-index: 100;
+    @include transition(opacity 0.3s ease-in-out);
+    @include transition-delay(0.3s);
+    & > a {
+      display: block;
+      margin-top: rem(10px);
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  &-header {
+    padding-top: rem(100px);
+    padding-right: rem(40px);
+    padding-bottom: rem(78px);
+    padding-left: rem(40px);
+    font-size: rem(20px);
+  }
+  &-title {
+    font-size: rem(37px);
+    line-height: 1.7;
+    color: #414042;
+    & > small {
+      display: block;
+    }
+  }
+  &-meta {
+    @extend %clearfix;
+    dt,
+    dd {
+      float: left;
+      margin: 0;
+
+      white-space: nowrap;
+    }
+    dt {
+      margin-left: rem(36px);
+      &:first-child {
+        margin-left: 0;
+      }
+      &:after {
+        content: " :\0000a0";
+        display: inline;
+      }
+    }
+  }
+  &-content {
+    line-height: 1.7;
+  }
+  &-section {
+    position: relative;
+    padding-top: rem(75px);
+    padding-right: rem(10px);
+    padding-bottom: rem(75px);
+    padding-left: rem(10px);
+    &:nth-of-type(1) {
+      background-color: #54575c;
+    }
+    &:nth-of-type(2),
+    &.l-work-banner-x {
+      background-color: #e1dfde;
+    }
+    &:nth-of-type(3) {
+      background-color: #54575c;
+    }
+    &:nth-of-type(4) {
+      background-color: #91979f
+    }
+    &:nth-of-type(5) {
+      background-color: #d4dbe5;
+    }
+    &:nth-of-type(6) {
+      background-color: #757a81;
+    }
+    &:nth-of-type(7) {
+      background-color: #757a81;
+    }
+  }
+  &-item {
+    .l-work-banner-x & {
+      width: 90%;
+      @extend %center-block;
+    }
+    .l-work-website &,
+    .l-work-banner & {
+      position: relative;
+      //height: rem(550px);
+      overflow: hidden;
+      /*      
+      height:rem(800px);
+      overflow:hidden;
+
+      background-size:auto 100%;
+      background-position:center top;
+      background-repeat:no-repeat;
+      */
+    }
+    .l-work-website & {
+      max-height: rem(550px);
+      padding-bottom: 8px;
+    }
+    .l-work-banner & {
+      height: rem(800px);
+      overflow: hidden;
+      background-size: auto 100%;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+  }
+  &-frame {
+    @include abs-pos(0, 0, -1px, 0);
+    z-index: 1;
+    @extend %site-bottom;
+    border-radius:0;
+  }
+  /*
+  &-mask{
+    @include abs-pos(0,0,-1px,0);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,1) 100%); 
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,1) 100%); 
+  }
+  */
+  &-btn-expend {
+    /*position:absolute;
+    bottom:rem(14px);
+    left:50%;*/
+    display: inline-block;
+    width: rem(197px);
+    margin-top: rem(25px);
+    z-index: 50;
+    text-align: center;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+    font-size: rem(22px);
+    color: #FFF;
+    opacity: 0;
+    @include transition(all 0.5s ease-in-out 0.2s);
+    @at-root .active & {
+      opacity: 1;
+    }
+  }
+}
+
+#viewer-detail-img {
+  position: relative;
+  display: block;
+  &.is-website {
+    @extend %site-bottom;
+  }
+  &.is-overflow{
+    position:relative;
+    top:50%;
+    @include transform(translateY(-50%));
+  }
+}

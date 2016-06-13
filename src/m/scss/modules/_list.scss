@@ -1,4 +1,138 @@
-.list{
+.list {
   @extend %clearfix;
   @extend %list-style-none;
+  .l-main & {
+    position: relative;
+    &-item {
+      position: relative;
+      width: 100%;
+      height: rem(265px);
+      
+      text-align: center;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, .8);
+
+      color: #FFF;
+
+      overflow:hidden;
+      & > img {
+        @include transform(scale3d(1, 1, 1));
+        @include transition(all 0.5s ease-in-out);
+        -webkit-transform-origin: center;
+        -moz-transform-origin: center;
+        -ms-transform-origin: center;
+        transform-origin: center;
+      }
+      &.is-hover {
+        & > img {
+          @include transform(scale3d(1.2, 1.2, 1.2));
+        }
+      }
+      a {
+        @include abs-pos(0, 0, 0, 0);
+        z-index: 1;
+        display: block;
+        padding-top: rem(84px);
+      }
+      h3,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      h3 {
+        font-size: rem(31px);
+        font-weight: normal;
+      }
+      p {
+        padding-top: rem(4px);
+        font-size: rem(20px);
+        text-transform: uppercase;
+        & > span {
+          &:first-child:before {
+            display: none;
+          }
+          &:before {
+            content: ', ';
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+  .l-work & {
+    /** ### 임시 ### */
+    //@include opacity(1);
+    @include transition(opacity 0.3s ease-in-out);
+
+    @at-root .is-view#{&}{
+      position:fixed;
+      top:0;
+      width:100%;      
+
+      @extend .section.l-work;
+      //@include opacity(0.2);
+    };
+
+    display: block;
+
+    position: relative;
+    &-item {
+      position: relative;
+      width: 100%;
+      height: rem(264px);
+      color: #FFF;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, .8);
+      background-size: 100% auto;
+      background-position: center;
+      background-repeat:no-repeat;
+      a {
+        position: relative;
+        z-index: 1;
+        display: block;
+        padding-top: rem(180px);
+        padding-left: rem(40px);
+      }
+      h3,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      h3 {
+        font-size: rem(30px);
+        font-weight: normal;
+      }
+      p {
+        //padding-top:rem(10px);
+        font-size: rem(20px);
+        text-transform: uppercase;
+        & > span {
+          &:first-child:before {
+            display: none;
+          }
+          &:before {
+            content: ', ';
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+  &-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 0;
+
+    border-color:transparent;
+    border-width:2px;
+
+    @include transition(all 0.3s ease-in-out);
+
+    @at-root #main-work-list .is-hover & {
+      border: 2px solid red;
+      background-color: rgba(0, 0, 0, .6);
+    }
+  }
 }

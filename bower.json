@@ -8,7 +8,8 @@
     "gsap": "latest",
     "html5shiv": "~3.7.3",
     "json2": "*",
-    "css3-mediaqueries-js": "~1.0.0"
+    "css3-mediaqueries-js": "~1.0.0",
+    "owl.carousel": "~2.1.3"
   },
   "devDependencies": {}
 }

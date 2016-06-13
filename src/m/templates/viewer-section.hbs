@@ -1,0 +1,89 @@
+{{!
+  viewer-section.hbs
+ 
+  WORK 상세보기의 내용 영역
+}}
+{{#if W}}
+  <section class="viewer-section owl-carousel l-work-website">
+    {{#each W}}
+      <div>
+        <figure class="viewer-item">
+          <img src="./{{file_url}}{{file_name}}" alt=""/>
+          <div class="viewer-frame"></div>
+        </figure>
+        <a class="viewer-btn-expend" href="{{file_url}}{{file_name}}" data-toggle="modal">
+          <img src="./images/btn-expend.png" alt="전체보기"/>
+        </a> 
+      </div>
+    {{/each}}
+  </section>  
+  {{/if}}
+
+  {{#if B}}
+  <section class="viewer-section owl-carousel l-work-banner">
+    {{#each B}}
+      <section class="viewer-item" style="background-image:url(./{{file_url}}{{file_name}})">
+      </section>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if X}}
+  <section class="viewer-section owl-carousel l-work-banner-x">
+    {{#each X}}
+      <section class="viewer-item">
+        <img src="./{{file_url}}{{file_name}}" alt="">
+      </section>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if O}}
+  <section class="viewer-section owl-carousel l-work-offline">
+    {{#each O}}
+    <img src="./{{file_url}}{{file_name}}" alt=""/>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if M}}
+  <section class="viewer-section owl-carousel l-work-media">
+    {{#each M}}
+      <a href="#popup-video" data-toggle="modal" data-video="{{movie_id}}">
+        <img src="{{file_url}}{{file_name}}" alt=""/>
+      </a>      
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if I}}
+  <section class="viewer-section owl-carousel l-work-icon">
+    {{#each I}}
+    <img src="./{{file_url}}{{file_name}}" alt=""/>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if R}}
+  <section class="viewer-section owl-carousel l-work-bi">
+    {{#each R}}
+    <img src="./{{file_url}}{{file_name}}" alt=""/>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if S}}
+  <section class="viewer-section owl-carousel l-work-sticon">
+    {{#each S}}
+    <img src="./{{file_url}}{{file_name}}" alt=""/>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if T}}
+  <section class="viewer-section owl-carousel l-work-timeboard">
+    {{#each T}}
+    <img src="./{{file_url}}{{file_name}}" alt=""/>
+    {{/each}}
+  </section>
+  {{/if}}

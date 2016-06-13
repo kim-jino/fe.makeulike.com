@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Makeulike</title>
+  <title>메큐라이크 | MAKEULIKE</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
   <script>
@@ -31,7 +31,7 @@
           </i>
         </a>
       </h1>
-      <i class="ico nav-bar"></i>
+      <a role="button" class="ico nav-bar"></a>
     </header>
     <nav class="l-nav nav-bar">
       <div class="gnb">
@@ -55,78 +55,21 @@
     <section class="section l-main">
       <h2 class="a11y">메인 컨텐츠</h2>
       <article class="cont">
-        <section class="slider">
-            <ul>
-              <li>
-                <img src="./images/notice/1.png" alt="">
-              </li>
-              <li>
-                <img src="./images/notice/2.png" alt="">
-              </li>
-              <li>
-                <img src="./images/notice/3.png" alt="">
-              </li>
-            </ul>
+        <section class="slider owl-carousel">
+          <img src="./images/notice/1.png" alt="">
+          <img src="./images/notice/2.png" alt="">
+          <img src="./images/notice/3.png" alt="">
+          <img src="./images/notice/5.png" alt="">
         </section>
-        <a class="btn-scroll-down" href="#main-portfolio" data-toggle="scrollspy" data-avoid-target=".l-header">
+        <a class="btn-scroll-down" href="#main-work-list" data-toggle="scrollspy" data-avoid-target=".l-header">
           <i class="uri-common ico-scroll-down"></i>
         </a>
       </article>
-      <ul class="list portfolio" id="main-portfolio">
-        <li >
-          <img src="./images/work/m_b_1.jpg" alt="">
-          <p class="portfolio-content">
-            <span class="portfolio-content-name">
-              뮤오리진
-            </span>
-            <span class="portfolio-content-category">
-              WEBSITE, BANNAR, OFFLINE
-            </span>
-            <i class="uri-common ico-more-portfolio"></i>
-          </p>
-          <div class="portfolio-mask"></div>
-        </li>
-        <li>
-          <img src="./images/work/m_b_2.jpg" alt="">          
-          <p class="portfolio-content">
-            <span class="portfolio-content-name">
-              뮤오리진
-            </span>
-            <span class="portfolio-content-category">
-              WEBSITE, BANNAR, OFFLINE
-            </span>
-            <i class="uri-common ico-more-portfolio"></i>
-          </p>
-          <div class="portfolio-mask"></div>
-        </li>
-        <li>
-          <img src="./images/work/m_b_3.jpg" alt="">
-          <p class="portfolio-content">
-            <span class="portfolio-content-name">
-              뮤오리진
-            </span>
-            <span class="portfolio-content-category">
-              WEBSITE, BANNAR, OFFLINE
-            </span>
-            <i class="uri-common ico-more-portfolio"></i>
-          </p>
-          <div class="portfolio-mask"></div>
-        </li>
-        <li>
-          <img src="./images/work/m_b_4.jpg" alt="">
-          <p class="portfolio-content">
-            <span class="portfolio-content-name">
-              뮤오리진
-            </span>
-            <span class="portfolio-content-category">
-              WEBSITE, BANNAR, OFFLINE
-            </span>
-            <i class="uri-common ico-more-portfolio"></i>
-          </p>
-          <div class="portfolio-mask"></div>
-        </li>
-      </ul>
+      <ul class="list portfolio" id="main-work-list"></ul>
     </section>
+    
+    <article class="viewer" id="work-viewer"></article>
+
     <footer class="l-footer">
       <div class="company">
         <p class="company-address">
@@ -161,24 +104,37 @@
       메큐라이크 사이트는 최상의 경험을 위해 세로 화면에 최적화되어 있습니다.
     </p>
   </aside>
-  <div id="" class="modal" data-role="modal">
+
+  <div class="modal" id="popup-viewer-detail" data-role="modal" data-view="full">
     <div class="modal-content">
       <!--내용-->
-      <a href="javascript:void(0)" data-rel="back" class="modal__close">
-        <img src="./images/spacer.png" alt="닫기">
+        <img src="" alt="" id="viewer-detail-img">
+      <!-- End -->
+      <a class="modal-btn-close" href="javascript:void(0)" data-rel="back">
+        <i class="uri-work btn-close"></i>        
       </a>
     </div>
   </div>
-  <!-- build:js /m/assets/js/vendor.js -->
+  
+  <!-- build:js ./assets/js/vendor.js -->
   <script src="../../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../../bower_components/bxslider/jquery.bxSlider.min.js"></script>
+  <script src="../../bower_components/handlebars/handlebars.min.js"></script>
   <!-- endbuild -->
-  <!-- build:js /m/assets/js/plugin.js-->
+  <!-- build:js ./assets/js/plugin.js-->
+  <script src="../../bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="../../mui/js/common.js"></script>
   <script src="../../mui/js/util.js"></script>
+  <script src="../../mui/js/ajax.js"></script>
+  <script src="../../mui/js/modal.js"></script>
+  <script src="../../mui/js/validate.js"></script>
   <script src="../../mui/js/events/scroll.js"></script>
+  <script src="../../mui/js/plugins/tabs.js"></script>
   <!-- endbuild -->
+  <!-- build:js ./js/common.js-->
+  <script src="js/work.js"></script>
+  <script src="js/contact.js"></script>
   <script src="js/main.js"></script>
+  <!-- endbuild -->
 </body>
 
 </html>

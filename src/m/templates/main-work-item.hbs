@@ -1,0 +1,57 @@
+{{!
+  main-work-item.hbs
+
+  첫 페이지의 work item
+}}
+
+{{#each .}}
+    <li class="list-item">
+      <img src="{{m_list_img}}" alt=""/>
+      <a href="#{{idx}}" role="button">
+        <h3>{{title}}</h3>
+        <p>
+          {{#if website}}
+            <span>website</span>
+          {{/if}}
+
+          {{#if mobile}}
+            <span>mobile</span>
+          {{/if}}
+
+          {{#if app}}
+            <span>app</span>
+          {{/if}}
+
+          {{#if banner}}
+            <span>banner</span>
+          {{/if}}
+
+          {{#if offline}}
+            <span>offline</span>
+          {{/if}}
+
+          {{#if media}}
+            <span>media</span>
+          {{/if}}
+
+          {{#if icon}}
+            <span>icon</span>
+          {{/if}}
+
+          {{#if iconbi}}
+            <span>icon/bi</span>
+          {{/if}}
+
+          {{#if sticon}}
+            <span>sticon</span>
+          {{/if}}
+
+          {{#if timeboard}}
+            <span>timeboard</span>
+          {{/if}}
+        </p>
+        <i class="uri-common ico-more-portfolio"></i>
+      </a>
+      <div class="list-mask"></div>
+    </li>
+  {{/each}}

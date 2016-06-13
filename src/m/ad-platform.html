@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Makeulike</title>
+  <title>메큐라이크 | MAKEULIKE</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1, maximum-scale=1">
   <meta name="description" content="">
   <script>
@@ -52,8 +52,8 @@
           </a>
       </div>
     </nav>
-    <section class="section l-ad-platform">
-      <ul class="tabs tab-nav" role="navigation">
+    <section class="section l-ad-platform tab">
+      <ul class="tab-nav" role="navigation">
         <li><a href="#insight">Insight</a></li>
         <li><a href="#viscuit">Viscuit</a></li>
         <li><a href="#game-juice">GameJuice</a></li>        
@@ -64,14 +64,10 @@
             WE PROVIDE INSIGHT <br>
             MARKETING FOR YOUR SERVICE
           </h2>
-          <ul id="insight-slider" class="slider">
-            <li>
+          <div id="insight-slider" class="slider owl-carousel">
               <img src="./images/ad-platform/insight-feature1-slider1.jpg" alt="">
-            </li>
-            <li>
               <img src="./images/ad-platform/insight-feature1-slider2.jpg" alt="">
-            </li>
-          </ul>
+          </div>
           <p>
             MAKE INSIGHT는 스토어별 게임앱 랭킹과 앱 관련 상세 데이터를
             <br> 제공 함으로써, 광고주들의 자사 게임앱 분석에 도움을 주어
@@ -170,14 +166,10 @@
             AND PUBLISHERS BY<br>
             CONNECTING WITH EACH OTHER
           </h2>
-          <ul id="viscuit-slider" class="slider">
-            <li>
-              <img src="./images/ad-platform/viscuit-feature1-slider1.jpg" alt="">
-            </li>
-            <li>
-              <img src="./images/ad-platform/viscuit-feature1-slider2.jpg" alt="">
-            </li>
-          </ul>
+          <div id="viscuit-slider" class="owl-carousel">
+            <img src="./images/ad-platform/viscuit-feature1-slider1.jpg" alt="">
+            <img src="./images/ad-platform/viscuit-feature1-slider2.jpg" alt="">
+          </div>
           <p>
             VISCUIT은 HD급 고화질 영상 송출과 다양한 Creative 표현이 가능한<br>
             재인지 카드를 동시에 제공하여, 브랜딩과 퍼포먼스 두 측면 모두<br>
@@ -263,20 +255,12 @@
       </article>
       <article class="features tab-content" id="game-juice">
         <section class="features-first cont">
-          <ul id="game-juice-slider" class="slider">
-            <li>
-              <img src="./images/ad-platform/gamejuice-feature1-slider1.jpg" alt="">
-            </li>
-            <li>
-              <img src="./images/ad-platform/gamejuice-feature1-slider2.jpg" alt="">
-            </li>
-            <li>
-              <img src="./images/ad-platform/gamejuice-feature1-slider3.jpg" alt="">
-            </li>
-            <li>
-              <img src="./images/ad-platform/gamejuice-feature1-slider4.jpg" alt="">
-            </li>
-          </ul>
+          <div id="game-juice-slider" class="owl-carousel">
+            <img src="./images/ad-platform/gamejuice-feature1-slider1.jpg" alt="">
+            <img src="./images/ad-platform/gamejuice-feature1-slider2.jpg" alt="">
+            <img src="./images/ad-platform/gamejuice-feature1-slider3.jpg" alt="">
+            <img src="./images/ad-platform/gamejuice-feature1-slider4.jpg" alt="">
+          </div>
         </section>
         <section class="features-even cont">          
           <p>
@@ -358,17 +342,25 @@
       </a>
     </div>
   </div>
-  <!-- build:js /m/assets/js/vendor.js -->
+  <!-- build:js ./assets/js/vendor.js -->
   <script src="../../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../../bower_components/bxslider/jquery.bxSlider.min.js"></script>
+  <script src="../../bower_components/handlebars/handlebars.min.js"></script>
   <!-- endbuild -->
-  <!-- build:js /m/assets/js/plugin.js-->
+  <!-- build:js ./assets/js/plugin.js-->
+  <script src="../../bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="../../mui/js/common.js"></script>
   <script src="../../mui/js/util.js"></script>
+  <script src="../../mui/js/ajax.js"></script>
+  <script src="../../mui/js/modal.js"></script>
+  <script src="../../mui/js/validate.js"></script>
   <script src="../../mui/js/events/scroll.js"></script>
   <script src="../../mui/js/plugins/tabs.js"></script>
   <!-- endbuild -->
+  <!-- build:js ./js/common.js-->
+  <script src="js/work.js"></script>
+  <script src="js/contact.js"></script>
   <script src="js/main.js"></script>
+  <!-- endbuild -->
   <script>
     $('.l-ad-platform').tabs();
   </script>
