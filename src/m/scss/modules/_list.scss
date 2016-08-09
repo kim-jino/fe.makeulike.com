@@ -63,10 +63,10 @@
     //@include opacity(1);
     @include transition(opacity 0.3s ease-in-out);
 
-    @at-root .is-view#{&}{
+    @at-root .is-view &{
       position:fixed;
       top:0;
-      width:100%;      
+      width:100%;
 
       @extend .section.l-work;
       //@include opacity(0.2);

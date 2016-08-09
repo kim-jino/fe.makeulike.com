@@ -22,8 +22,8 @@
   {{#if B}}
   <section class="viewer-section owl-carousel l-work-banner">
     {{#each B}}
-      <section class="viewer-item" style="background-image:url(./{{file_url}}{{file_name}})">
-      </section>
+      <div class="viewer-item" style="background-image:url(./{{file_url}}{{file_name}})">
+      </div>
     {{/each}}
   </section>
   {{/if}}
@@ -31,9 +31,9 @@
   {{#if X}}
   <section class="viewer-section owl-carousel l-work-banner-x">
     {{#each X}}
-      <section class="viewer-item">
+      <div class="viewer-item">
         <img src="./{{file_url}}{{file_name}}" alt="">
-      </section>
+      </div>
     {{/each}}
   </section>
   {{/if}}

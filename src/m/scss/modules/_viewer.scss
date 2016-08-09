@@ -6,6 +6,12 @@
     opacity: 1;
     @include transform(none);
   }
+
+  // 160809 TabNavigation Hidden
+  .l-work + &{
+    margin-top:rem(-66px);
+  }
+
   position:absolute; //   fixed로 할 경우 아이폰 사파리에서 내용 Cut-off 현상 발생
   top:0;
   left:0;
@@ -15,8 +21,8 @@
   background-color:white;
   opacity:0;
   .l-main ~ & {
-    @extend .section.l-work;
-    padding-top: 0;
+    //@extend .section.l-work;
+    padding-top:rem(104px);
   }
   &-inner {
     position: relative;

@@ -35,8 +35,10 @@
     padding-top:rem(66px);
   }
 
-  &.l-work.is-view{
-    padding-top:0;
+  &.l-work{
+    @at-root .is-view &{
+      @include opacity(0);
+    }
   }
 
   &.l-recruit{

@@ -1,5 +1,5 @@
 .is-view{
-  &.l-work {
+  .l-work {
     & > .tab-nav,
     & > .list{
       opacity:0;
@@ -11,7 +11,8 @@
 }
 
 .is-close{
-  &.l-work {
+  .section.l-work {
+    &,
     & > .tab-nav,
     & > .list{
       opacity:1;

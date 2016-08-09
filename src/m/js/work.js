@@ -41,7 +41,7 @@ var Work = (function() {
    * @param  {String} type 페이지 이름
    */
   var init = function(type) {
-    //$target.workViewer.parent().append('<article id="work-viewer" class="viewer"></article>');
+    //$target.workViewer.closest('#viewport').append('<article id="work-viewer" class="viewer"></article>');
     $('body').append(videoViewer);
 
     referel = type;
@@ -154,7 +154,7 @@ var Work = (function() {
     $target.workViewer.append(template(data)).promise().done(function() {
       sliderFactoy(data);
 
-      $target.workViewer.parent().addClass('is-view');
+      $target.workViewer.closest('#viewport').addClass('is-view');
       $target.workViewer.css('transform', 'none');
       setTimeout(function() {
         $('.viewer-lnb').fadeIn();
@@ -302,8 +302,8 @@ var Work = (function() {
   $target.workViewer.on('click', '.viewer-btn-close', function(e) {
     e.preventDefault();
 
-    //$target.workViewer.parent().removeClass('is-view');
-    $target.workViewer.parent().addClass('is-close');
+    //$target.workViewer.closest('#viewport').removeClass('is-view');
+    $target.workViewer.closest('#viewport').addClass('is-close');
     $('.viewer-lnb').hide();
 
     $target.workViewer.css('transform', 'translate3d(100%,0,0)');
@@ -315,9 +315,9 @@ var Work = (function() {
   });
 
   $target.workViewer.on('transitionend webkitTransitionEnd oTransitionEnd', function() {
-    //$target.workViewer.parent().removeClass('is-close');
-    if ($target.workViewer.parent().hasClass('is-close')) {
-      $target.workViewer.parent().removeClass('is-view is-close');
+    //$target.workViewer.closest('#viewport').removeClass('is-close');
+    if ($target.workViewer.closest('#viewport').hasClass('is-close')) {
+      $target.workViewer.closest('#viewport').removeClass('is-view is-close');
 
       // Index, Work 메뉴에 대한 분기
       if (referel === "work") {
