@@ -1,0 +1,16 @@
+{{!
+  main-news.hbs
+ 
+ 뉴스업데이트
+}}
+{{#each .}}
+    <div class="news-item" role="listitem">
+      <h3>
+        <img src="{{biSrc}}" alt="">
+        <span>{{date}}</span>
+        <p>
+          {{breaklines content}}
+        </p>
+      </h3>
+    </div>
+  {{/each}}

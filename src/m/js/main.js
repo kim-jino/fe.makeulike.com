@@ -2,6 +2,8 @@ var UI = (function() {
   var $el = {
     gnb: $('.l-nav'),
     header: $('.l-header'),
+    news: $('#popup-news .news'),
+    newsSlider: $('#news-slider'),
     portfolio: {
       main: $('.l-main > .portfolio'),
       work: $('.l-work > .portfolio')
@@ -12,11 +14,19 @@ var UI = (function() {
       adPlatform: $('.l-ad-platform')
     }
   };
+
+  var URL = {
+    news: 'http://new.makeulike.co.kr/mgr/news.php?callback=?',
+    newsLatest: 'http://new.makeulike.co.kr/mgr/news_latest.php?callback=?'
+  };
+
+  var tmpl = {
+    news: './templates/main-news.hbs'
+  };
   
   var is = {
     stickyHeader: true // is Sticky at Header
   };
-
   /**
    * GNB Navigation Toggle
    * @pages: common
@@ -64,6 +74,101 @@ var UI = (function() {
   };
 
   /**
+   * 메인페이지 공지사항 더 보기 기능 추가
+   * @pages: Main
+   * @date: 160810
+   */
+  var toggleNews = function(type){
+    if( type === "on" ){
+      mui.modal.open('popup-news');
+      $('#viewport').css('-webkit-filter', 'blur(3px)');
+      
+      setTimeout(function(){
+        $('body').addClass('is-expanded-news');
+      }, 50);
+    }else if ( type === "off" ){
+      $('body').removeClass('is-expanded-news');
+      $('#viewport').css('-webkit-filter', 'none');
+
+      setTimeout(function(){
+        mui.modal.close('popup-news');
+      }, 50);
+    }
+  };
+
+  /**
+   * setNewsTemplate
+   */
+  var setNewsTemplate = function(){
+    $.get(tmpl.news, function(source){
+      tmpl.news = source;
+      getNews();
+    });
+  };
+
+  var getNews = function(){
+    var param = {};
+
+    mui.ajax.jsonp(URL.newsLatest, function(rtn){
+      var 
+      data =  rtn;      
+      data.data = JSON.parse(data.data);
+
+      
+      if (data.status != "1") {
+        alert('오류가 발생하였습니다.\n페이지를 새로고침합니다.');
+        window.history.go();
+      }
+
+      setNews($el.newsSlider, data.data);
+    }, function(e) {
+      console.log(e);
+    });
+
+    mui.ajax.jsonp(URL.news, function(rtn){
+      var 
+      data =  rtn;      
+      data.data = JSON.parse(data.data);
+
+      if (data.status != "1") {
+        alert('오류가 발생하였습니다.\n페이지를 새로고침합니다.');
+        window.history.go();
+      }
+
+      setNews($el.news, data.data);
+    }, function(e) {
+      console.log(e);
+    });
+
+  };
+
+  var setNews = function($target, data){
+    var template = Handlebars.compile(tmpl.news);
+    
+    $target.append(template(data)).promise().done(function(){
+      // 뉴스 슬라이더
+      if( $target === $el.newsSlider ){
+        // 슬라이더 팩토리 가동!! 메인 페이지 뉴스 슬라이드
+        sliderFactory($('#news-slider'), function(){
+          // 더 보기 버튼 추가
+          var 
+          $_self = $(this)[0].$element;
+          $_self.append('<button class="btn-news-more"> <i class="uri-common ico-more-news"></i></button>');
+
+          $('#news-slider .btn-news-more').on('click', function(){
+            toggleNews('on');
+          });
+
+          $('.l-news .ico.nav-bar').on('click', function(){
+            toggleNews('off');
+          });
+        });
+
+      }
+    });
+  };
+
+  /**
    * 메인페이지 포트폴리오 목록이 자동으로 슬라이딩 되게 하는 기능
    * @pages: Main
    */
@@ -80,14 +185,15 @@ var UI = (function() {
       }, 2000);
     }
   };
+
   /**
    * 메인페이지 로딩 시 실행되어야 할 메소드
    * @return {[type]} [description]
    */
-  var mainProcedure = function() {    
+  var mainProcedure = function() {  
+    setNewsTemplate();  
     setFocusPortfolio();
 
-    sliderFactory($('.l-main .owl-carousel'));
     Work.init('main');
   };
 
@@ -95,18 +201,22 @@ var UI = (function() {
     Work.init('work');
   };
 
-  var sliderFactory = function($target) {
+  var sliderFactory = function($target, cb) {
     var options = {
       loop: true,
       autoplay: true,
       margin: 0,
-      items: 1
+      items: 1,
+      smartSpeed: 750,
+      autoplayTimeout: 5000,
+      onInitialized : cb
     };
 
     return $target.owlCarousel(options);
-  }
+  };
 
   var init = function() {
+
     scrollInterface();
     resizeInterface();
 
@@ -134,7 +244,7 @@ var UI = (function() {
         $('#insight-slider'),
         $('#viscuit-slider'),
         $('#game-juice-slider')
-      ]
+      ];
 
       var $slider = [
         sliderFactory(($sliderTarget[0])),
@@ -174,7 +284,7 @@ var UI = (function() {
    */
 
   /** GNB Icon Toggle */
-  $('.ico.nav-bar').on('click', function(e) {
+  $('.l-header .ico.nav-bar').on('click', function(e) {
     e.preventDefault();
     
     UI.toggleNavBar();
@@ -182,18 +292,24 @@ var UI = (function() {
     $(this).toggleClass('is-toggle');
   });
 
+  // index
+
   // Ad-Platform Tab
   $('.l-ad-platform .tab-nav a').on('click', function(){
     mui.util.goToPosition(0);
-  })
+  });
 
   $(window).scroll(function() {
     UI.scrollInterface();
   });
 
+  $('.btn-scroll-down').on('click', function(e){
+    e.preventDefault();
+    mui.util.goToPosition( $($(this).attr('href')).offset().top - $('.l-header').innerHeight() );
+  });
+
   // Event Listening
   window.addEventListener('orientationchange', function(ev){
-    console.log(window.orientation)
     if(window.orientation === 0){
       $('.is-landscape').hide();
     } else {
@@ -225,4 +341,8 @@ Handlebars.registerHelper('ifCond', function(v1, operator, v2, options) {
     default:
       return options.inverse(this);
   }
+});
+
+Handlebars.registerHelper('breaklines', function(text) {
+    return new Handlebars.SafeString(text.replace(/(\r\n|\n|\r)/gm, '<br>'));
 });

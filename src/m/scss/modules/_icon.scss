@@ -53,6 +53,11 @@
         @include transform(rotateZ(315deg));
       }
     }
+
+    #popup-news &{
+      position: absolute;
+      right:0;
+    }
   }
 
   &.accordion-plus{

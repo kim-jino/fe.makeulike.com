@@ -20,7 +20,7 @@
     var offsetY = $(this).offset().top - $('.l-header').innerHeight();
     setTimeout(function(){
       mui.util.goToPosition(offsetY);
-    }, 100)
+    }, 100);
 
     $(this).addClass('is-active');
     $(this).next('.accordion-cont').slideDown(300).addClass('is-active');

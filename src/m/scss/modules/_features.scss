@@ -90,8 +90,10 @@
       color: #414042;
     }
     &-entry {
-      @extend %list-style-none;
-      @extend .cont;
+      padding-right:rem(40px);
+      padding-left:rem(40px);
+      
+      @extend %list-style-none;      
       li {
         position: relative;
         display: inline-block;

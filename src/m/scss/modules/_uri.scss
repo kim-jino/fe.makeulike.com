@@ -3,6 +3,18 @@
     display:block;
     background-size:100% 100%;
   }
+
+  &-common{
+    text-indent: -9999px;
+    &.ico-more-news{
+      width:rem(49px);
+      height:rem(25px);
+    }
+    &.ico-news-close{
+      width:rem(30px);
+      height:rem(30px);
+    }
+  }
 }
 
 .btn-next,

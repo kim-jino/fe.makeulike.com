@@ -6,7 +6,8 @@
     letter-spacing: rem(-1px);
     &-heading,
     &-cont {
-      @extend .cont;
+      padding-right:rem(40px);
+      padding-left:rem(40px);
     }
     &-heading {
       position: relative;

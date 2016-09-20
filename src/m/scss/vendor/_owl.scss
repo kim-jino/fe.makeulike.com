@@ -7,17 +7,6 @@
  
 .owl-carousel {
   text-align: center;
-
-  .l-main &{
-    position:absolute;
-    top:rem(324px);
-    left:50%;
-
-    width:100%;
-    height:rem(192px);
-
-    @include transform(translateX(-50%));
-  }
 }
 .owl{
   &-dots{    
@@ -26,7 +15,7 @@
     text-align: center;
 
     .l-main &{
-      margin-top:rem(13px);
+      margin-top:rem(48px);
     }
 
     #work-viewer &{
@@ -43,12 +32,14 @@
     &:first-child {
       margin-left: 0;
 
-      .l-main & {
+      .l-main &,
+      .l-notice & {
         margin-left:0
       }
     }
 
-    .l-main & {
+    .l-main &,
+    .l-notice & {
       margin-left:rem(11px);
     }
 
@@ -64,7 +55,8 @@
       height: rem(16px);
 
       border-radius: 50%;      
-      .l-main &{
+      .l-main &,
+      .l-notice &{
         background-color:#929294;
       }
 
@@ -76,7 +68,8 @@
 
     // Dots icon .is-active
     &.active span{
-      @at-root .l-main &{
+      @at-root .l-main &,
+      .l-notice &{
         background-color:#FFF;
       }
 

@@ -1,7 +1,7 @@
 .cont{
   position:relative;
 
-  .l-main &{
+  .l-main &:nth-of-type(1){
     background-image:url('../images/main/cont.jpg');
     background-size:cover;
     background-position:center top;

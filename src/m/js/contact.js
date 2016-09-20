@@ -39,7 +39,7 @@ var Contact = (function() {
         alert("메일 전송이 실패되었습니다.\n페이지를 새로고침 합니다.");
           history.go(0);
           return false;
-        };
+        }
       }
     });
   };

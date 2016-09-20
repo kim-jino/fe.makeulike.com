@@ -24,3 +24,7 @@ body{
   font-family: 'GravuConReg','NanumGothic', sans-serif;
   background-color:$color-footer-bg;
 }
+
+button{
+  @extend %empty-button;
+}

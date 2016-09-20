@@ -57,11 +57,8 @@
       <h2 class="a11y">메인 컨텐츠</h2>
       <div class="cont">
         <h3 class="a11y">공지사항</h3>
-        <div class="slider owl-carousel">
-          <img src="./images/notice/1.png" alt="">
-          <img src="./images/notice/2.png" alt="">
-          <img src="./images/notice/3.png" alt="">
-          <img src="./images/notice/5.png" alt="">
+        <div class="slider owl-carousel news" id="news-slider" role="list">
+          <img src="./images/news/1.png" alt="">
         </div>
         <a class="btn-scroll-down" href="#main-work-list" data-toggle="scrollspy" data-avoid-target=".l-header">
           <i class="uri-common ico-scroll-down"></i>
@@ -69,14 +66,12 @@
       </div>
       <ul class="list portfolio" id="main-work-list"></ul>
     </section>
-    
-    <article class="viewer" id="work-viewer"></article>
-
+    <section class="viewer" id="work-viewer"></section>
     <footer class="l-footer">
       <div class="company">
         <p class="company-address">
-          16F, Golden Tower, 511, Samseong-ro, <br>
-          GANGNAM-GU, SEOUL, KOREA
+          16F, Golden Tower, 511, Samseong-ro,
+          <br> GANGNAM-GU, SEOUL, KOREA
         </p>
         <span class="company-tel">
           T. 82. 2. 2015. 2600 
@@ -102,23 +97,32 @@
       </nav>
     </footer>
   </main>
+  <div class="modal" id="popup-news" data-role="modal" data-view="full">
+    <section class="section l-news">
+      <h2 class="a11y">공지사항</h2>
+      <div class="news" role="list">
+        
+      </div>
+      <a role="button" class="ico nav-bar is-toggle"></a>
+    </section>
+  </div>
+
+  <div class="modal" id="popup-viewer-detail" data-role="modal" data-view="full">
+    <section class="modal-content">
+      <!--내용-->
+      <img src="" alt="" id="viewer-detail-img">
+      <!-- End -->
+      <a class="modal-btn-close" href="javascript:void(0)" data-rel="back">
+        <i class="uri-work btn-close"></i>
+      </a>
+    </section>
+  </div>
+
   <div class="is-landscape">
     <p class="a11y">
       메큐라이크 사이트는 최상의 경험을 위해 세로 화면에 최적화되어 있습니다.
     </p>
   </div>
-
-  <div class="modal" id="popup-viewer-detail" data-role="modal" data-view="full">
-    <div class="modal-content">
-      <!--내용-->
-        <img src="" alt="" id="viewer-detail-img">
-      <!-- End -->
-      <a class="modal-btn-close" href="javascript:void(0)" data-rel="back">
-        <i class="uri-work btn-close"></i>        
-      </a>
-    </div>
-  </div>
-  
   <!-- build:js ./assets/js/vendor.js -->
   <script src="../../bower_components/jquery/dist/jquery.js"></script>
   <script src="../../bower_components/handlebars/handlebars.min.js"></script>

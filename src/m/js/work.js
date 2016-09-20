@@ -11,13 +11,13 @@ var Work = (function() {
     work: './templates/work-item.hbs',
     viewerHeader: './templates/viewer-header.hbs',
     viewerSection: './templates/viewer-section.hbs'
-  }
+  };
 
-  var $target = {
+  var $el = {
     main: $('#main-work-list'),
     work: $('#work-list'),
     workViewer: $('#work-viewer')
-  }
+  };
 
   var tmpYPos = 0;
   var referel;
@@ -41,7 +41,7 @@ var Work = (function() {
    * @param  {String} type 페이지 이름
    */
   var init = function(type) {
-    //$target.workViewer.closest('#viewport').append('<article id="work-viewer" class="viewer"></article>');
+    //$el.workViewer.closest('#viewport').append('<article id="work-viewer" class="viewer"></article>');
     $('body').append(videoViewer);
 
     referel = type;
@@ -59,7 +59,7 @@ var Work = (function() {
         window.history.go();
       }
 
-      setList(type, $target[type], data.data);
+      setList(type, $el[type], data.data);
     }, function(e) {
       console.log(e);
     });
@@ -93,9 +93,9 @@ var Work = (function() {
 
       // Index, Work 메뉴에 대한 분기
       if (referel === "work")
-        $target.work.css('top', tmpYPos * -1);
+        $el.work.css('top', tmpYPos * -1);
       else if (referel === "main") {
-        $target.main.parent().css({
+        $el.main.parent().css({
           'position': 'fixed',
           'top': tmpYPos * -1
         });
@@ -130,9 +130,9 @@ var Work = (function() {
     });
   };
 
-  var setList = function(type, $target, data) {
+  var setList = function(type, $el, data) {
     var template = Handlebars.compile(tmpl[type]);
-    $target.html(template(data));
+    $el.html(template(data));
   };
 
   var setViewerHeader = function(data) {
@@ -143,7 +143,7 @@ var Work = (function() {
     data.subtitle = decodeURIComponent(data.subtitle.replace(/\+/g, ' '));
     data.text = decodeURIComponent(data.text.replace(/\+/g, ' ')); //  URI 에서 + 를 제외
 
-    $target.workViewer.empty().append(template(data));
+    $el.workViewer.empty().append(template(data));
 
   };
 
@@ -151,11 +151,11 @@ var Work = (function() {
     var data = data;
     var template = Handlebars.compile(tmpl.viewerSection);
 
-    $target.workViewer.append(template(data)).promise().done(function() {
+    $el.workViewer.append(template(data)).promise().done(function() {
       sliderFactoy(data);
 
-      $target.workViewer.closest('#viewport').addClass('is-view');
-      $target.workViewer.css('transform', 'none');
+      $el.workViewer.closest('#viewport').addClass('is-view');
+      $el.workViewer.css('transform', 'none');
       setTimeout(function() {
         $('.viewer-lnb').fadeIn();
       }, 400);
@@ -174,13 +174,13 @@ var Work = (function() {
     if (data.W && Object.keys(data.W).length !== 1) {
       $('.l-work-website').owlCarousel(options);
     } else {
-      $('.l-work-website').addClass('active')
+      $('.l-work-website').addClass('active');
     }
 
     if (data.B && Object.keys(data.B).length !== 1) {
       $('.l-work-banner').owlCarousel(options);
     } else {
-      $('.l-work-banner').addClass('active')
+      $('.l-work-banner').addClass('active');
     }
 
     if (data.X && Object.keys(data.X).length !== 1) {
@@ -239,7 +239,7 @@ var Work = (function() {
 
 
   // WORK 각 항목 클릭 이벤트 (index)
-  $target.main.on('click', '.list-item > a', function(e) {
+  $el.main.on('click', '.list-item > a', function(e) {
     e.preventDefault();
     var idx = $(this).attr('href').replace('#', '');
 
@@ -249,7 +249,7 @@ var Work = (function() {
   });
 
   // WORK 각 항목 클릭 이벤트 (work)
-  $target.work.on('click', '.list-item > a', function(e) {
+  $el.work.on('click', '.list-item > a', function(e) {
     e.preventDefault();
     var idx = $(this).attr('href').replace('#', '');
 
@@ -260,7 +260,7 @@ var Work = (function() {
 
 
   // WORK 사이트 및 배너 상세페이지 확인
-  $target.workViewer.on('click', '.viewer-item', function(e) {
+  $el.workViewer.on('click', '.viewer-item', function(e) {
     e.preventDefault();
 
     var src = '';
@@ -293,41 +293,41 @@ var Work = (function() {
 
 
   // 전체보기 버튼을 내용영역 밖으로 빼면서 추가 수정 (.viewer-item 트리깅)
-  $target.workViewer.on('click', '.viewer-btn-expend', function(e) {
+  $el.workViewer.on('click', '.viewer-btn-expend', function(e) {
     e.preventDefault();
     $(this).parent().find('.viewer-item').trigger('click');
   });
 
   // WORK 상세페이지 닫기
-  $target.workViewer.on('click', '.viewer-btn-close', function(e) {
+  $el.workViewer.on('click', '.viewer-btn-close', function(e) {
     e.preventDefault();
 
-    //$target.workViewer.closest('#viewport').removeClass('is-view');
-    $target.workViewer.closest('#viewport').addClass('is-close');
+    //$el.workViewer.closest('#viewport').removeClass('is-view');
+    $el.workViewer.closest('#viewport').addClass('is-close');
     $('.viewer-lnb').hide();
 
-    $target.workViewer.css('transform', 'translate3d(100%,0,0)');
+    $el.workViewer.css('transform', 'translate3d(100%,0,0)');
   });
 
-  $target.workViewer.on('click', '.viewer-btn-prev, .viewer-btn-next', function() {
+  $el.workViewer.on('click', '.viewer-btn-prev, .viewer-btn-next', function() {
     var idx = $(this).attr('href').replace('#', '');
     getContents(idx);
   });
 
-  $target.workViewer.on('transitionend webkitTransitionEnd oTransitionEnd', function() {
-    //$target.workViewer.closest('#viewport').removeClass('is-close');
-    if ($target.workViewer.closest('#viewport').hasClass('is-close')) {
-      $target.workViewer.closest('#viewport').removeClass('is-view is-close');
+  $el.workViewer.on('transitionend webkitTransitionEnd oTransitionEnd', function() {
+    //$el.workViewer.closest('#viewport').removeClass('is-close');
+    if ($el.workViewer.closest('#viewport').hasClass('is-close')) {
+      $el.workViewer.closest('#viewport').removeClass('is-view is-close');
 
       // Index, Work 메뉴에 대한 분기
       if (referel === "work") {
-        $target.work.removeAttr('style');
+        $el.work.removeAttr('style');
       } else if (referel === "main") {
-        $target.main.parent().removeAttr('style');
+        $el.main.parent().removeAttr('style');
         UI.is.stickyHeader = true;
       }
 
-      $target.workViewer.removeAttr('style');
+      $el.workViewer.removeAttr('style');
       $(window).scrollTop(tmpYPos);
     }
   });
